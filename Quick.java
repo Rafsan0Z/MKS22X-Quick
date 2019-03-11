@@ -31,10 +31,9 @@ public class Quick{
       if( k < end){
         end--;
       }
-      else{
-
-      }
+      start = partition(data,start,end);
     }
+    return data[end];
   }
 
   public static void exchange(int num1, int num2, int[] data){ // these are indices
