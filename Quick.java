@@ -25,13 +25,11 @@ public class Quick{
   }
 
   public static int quickselect(int[] data, int k){
-    int start = partition(data,0,data.length - 1);
+    int start = 0;
     int end = data.length - 1;
-    while(k < end && k >= start){
-      if( k < end){
-        end--;
-      }
-      start = partition(data,start,end);
+    int point = partition(data,start,end);
+    while(){
+      
     }
     return data[start];
   }
