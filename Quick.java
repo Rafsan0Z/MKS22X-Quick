@@ -25,15 +25,15 @@ public class Quick{
   }
 
   public static int quickselect(int[] data, int k){
-    int start = partition(data,0,data.length() - 1);
-    int end = data.length() - 1;
+    int start = partition(data,0,data.length - 1);
+    int end = data.length - 1;
     while(k < end && k >= start){
       if( k < end){
         end--;
       }
       start = partition(data,start,end);
     }
-    return data[end];
+    return data[start];
   }
 
   public static void exchange(int num1, int num2, int[] data){ // these are indices
@@ -57,7 +57,8 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
   int result = partition(data,0,6);
-  System.out.println(result);
+  int result2 = quickselect(data,3);
+  System.out.println(result2);
   System.out.println(printArray(data));
 
 }
