@@ -25,7 +25,16 @@ public class Quick{
   }
 
   public static int quickselect(int[] data, int k){
-    
+    int start = partition(data,0,data.length() - 1);
+    int end = data.length() - 1;
+    while(k < end && k >= start){
+      if( k < end){
+        end--;
+      }
+      else{
+
+      }
+    }
   }
 
   public static void exchange(int num1, int num2, int[] data){ // these are indices
