@@ -97,6 +97,12 @@ public class Quick{
   return result + "]";
 }
 
+public static void quicksort(int[] data){
+
+}
+
+public static void QuickSortHelper(int[] data, int lo, int hi)
+
 public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
