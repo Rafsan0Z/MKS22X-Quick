@@ -50,11 +50,16 @@ public class Quick{
   }
 
   public static int[] partitionDutch(int[] data, int lo, int hi){
-
+    int lt = 0;
+    int gt = 0;
+    int[] result = new int[2];
+    result[0] = lt;
+    result[1] = gt;
+    return result;
   }
 
   public void quicksort(int[] data){
-    
+
   }
 
   public static int median(int num1, int num2, int num3){
