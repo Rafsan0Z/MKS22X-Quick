@@ -107,18 +107,17 @@ public class Driver {
             }
             //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
-        ArrayList<Integer> base = createBase(10);
+        int num = Integer.parseInt(args[0]);
+        ArrayList<Integer> base = createBase(num);
         ArrayList<Integer> copy = new ArrayList<Integer>();
-        for(int j = 0; j < base.size(); j++){
+        for(int j = 0; j < num; j++){
           copy.add(base.get(j));
         }
-        int[] tester = new int[10];
+        int[] tester = new int[num];
         tester = generateArry(base);
-        System.out.println(base);
-        System.out.println(copy);
-        for(int i = 0; i< 10; i++){
+        for(int i = 0; i< num-1; i++){
           int k = Quick.quickselect(tester,i);
-          if(k != copy.get(i+1)){System.out.println("fail!");}
+          if(k != copy.get(i)){System.out.println("fail!");}
         }
         System.out.println("R: SUCCESS"); //R for random
     }

@@ -55,8 +55,8 @@ public class Quick{
 public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
-  int result = partition(data,0,6);
-  int result2 = quickselect(data,4);
+  int result = partition(data,0,1);
+  int result2 = quickselect(data,0);
   System.out.println(result2);
   System.out.println(printArray(data));
 
