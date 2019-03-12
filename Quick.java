@@ -15,8 +15,8 @@ public class Quick{
       }
       else if(data[start] < pivotInt){
         exchange(pivot,start,data);
+        pivot = start;
         start++;
-        pivot++;
       }
       else if(data[start] == pivotInt){
         start++;
