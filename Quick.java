@@ -25,12 +25,12 @@ public class Quick{
   }
 
   public int partitionDutch(int[] data, int lo, int hi){
-
+    return 0;
   }
 
-  public int median(int num1, int num2, int num3){
-    if(num1 > num2 && num2 > num3){return num2;}
-    else if(num2 > num1 && num1 > num3){return num1;}
+  public static int median(int num1, int num2, int num3){
+    if(num1 < num2 && num2 < num3){return num2;}
+    else if(num2 < num1 && num1 < num3){return num1;}
     else{return num3;}
   }
 
@@ -67,7 +67,8 @@ public static void main(String[] args){
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
   int result = partition(data,0,1);
   int result2 = quickselect(data,0);
-  System.out.println(result2);
+  int middle = median(14,23,15);
+  System.out.println(middle);
   System.out.println(printArray(data));
 
 }
