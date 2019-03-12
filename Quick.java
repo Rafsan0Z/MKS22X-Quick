@@ -24,6 +24,14 @@ public class Quick{
     return pivot;
   }
 
+  public int partitionDutch(int[] data, int lo, int hi){
+
+  }
+
+  public int median(int[] data){
+    
+  }
+
   public static int quickselect(int[] data, int k){
     int start = 0;
     int end = data.length - 1;
