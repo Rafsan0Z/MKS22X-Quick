@@ -32,8 +32,10 @@ public class Driver {
       int[] result = new int[data.size()];
       int counter = 0;
       while(data.size() > 0){
-        int index = (int)Math.random()*data.size();
+        Random rn = new Random();
+        int index = rn.nextInt(data.size());
         result[counter] = data.get(index);
+        counter++;
         data.remove(index);
       }
       return result;
@@ -114,8 +116,10 @@ public class Driver {
         tester = generateArry(base);
         System.out.println(base);
         System.out.println(copy);
-        int k = Quick.quickselect(tester,3);
-        System.out.println(k);
+        for(int i = 0; i< 10; i++){
+          int k = Quick.quickselect(tester,i);
+          if(k != copy.get(i+1)){System.out.println("fail!");}
+        }
         System.out.println("R: SUCCESS"); //R for random
     }
 }
