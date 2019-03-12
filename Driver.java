@@ -22,10 +22,14 @@ public class Driver {
     public static ArrayList<Integer> createBase(int limitSize){
       ArrayList<Integer> result = new ArrayList<Integer>();
       for(int i = 10; i < limitSize+10; i++){
-        int num = (int)Math.random()*i;
+        int num = i*2 + i - 18;
         result.add(num);
       }
       return result;
+    }
+
+    public static int[] generateArry(ArrayList<Integer> data){
+
     }
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
@@ -83,6 +87,7 @@ public class Driver {
             }
             System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
+        ArrayList<Integer> base = createBase(1000);
         System.out.println("R: SUCCESS"); //R for random
     }
 }
