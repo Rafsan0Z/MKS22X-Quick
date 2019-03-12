@@ -29,8 +29,8 @@ public class Quick{
     int end = data.length - 1;
     int point = partition(data,start,end);
     while(k != point){
-      if(k < p){point = partition(data,0,point);}
-      else if( k > p){point = partition(data,point,end);}
+      if(k < point){point = partition(data,0,point);}
+      else if( k > point){point = partition(data,point,end);}
     }
     return data[point];
   }
@@ -56,7 +56,7 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
   int result = partition(data,0,6);
-  int result2 = quickselect(data,3);
+  int result2 = quickselect(data,4);
   System.out.println(result2);
   System.out.println(printArray(data));
 
