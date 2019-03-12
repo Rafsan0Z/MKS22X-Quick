@@ -98,10 +98,13 @@ public class Quick{
 }
 
 public static void quicksort(int[] data){
-
+  int end = data.length()-1;
+  QuickSortHelper(data,0,end);
 }
 
-public static void QuickSortHelper(int[] data, int lo, int hi)
+public static void QuickSortHelper(int[] data, int lo, int hi){
+
+}
 
 public static void main(String[] args){
 
