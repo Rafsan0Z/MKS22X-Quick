@@ -29,7 +29,14 @@ public class Driver {
     }
 
     public static int[] generateArry(ArrayList<Integer> data){
-
+      int[] result = new int[data.size()];
+      int counter = 0;
+      while(data.size() != 0){
+        int index = Math.random()*data.size();
+        result[counter] = data.get(index);
+        data.remove(index);
+      }
+      return result;
     }
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
