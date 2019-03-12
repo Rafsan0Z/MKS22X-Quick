@@ -21,9 +21,11 @@ public class Driver {
 
     public static ArrayList<Integer> createBase(int limitSize){
       ArrayList<Integer> result = new ArrayList<Integer>();
-      for(int i = 0; i < limitSize; i++){
-
+      for(int i = 10; i < limitSize+10; i++){
+        int num = (int)Math.random()*i;
+        result.add(num);
       }
+      return result;
     }
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
