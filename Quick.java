@@ -28,10 +28,11 @@ public class Quick{
     int start = 0;
     int end = data.length - 1;
     int point = partition(data,start,end);
-    while(){
-      
+    while(k != point){
+      if(k < p){point = partition(data,0,point);}
+      else if( k > p){point = partition(data,point,end);}
     }
-    return data[start];
+    return data[point];
   }
 
   public static void exchange(int num1, int num2, int[] data){ // these are indices
