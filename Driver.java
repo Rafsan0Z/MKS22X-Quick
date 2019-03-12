@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Random;
 import java.lang.Math;
 
@@ -16,6 +17,13 @@ public class Driver {
             }
         }
         return true;
+    }
+
+    public static ArrayList<Integer> createBase(int limitSize){
+      ArrayList<Integer> result = new ArrayList<Integer>();
+      for(int i = 0; i < limitSize; i++){
+
+      }
     }
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
