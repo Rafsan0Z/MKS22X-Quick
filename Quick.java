@@ -21,6 +21,7 @@ public class Quick{
         start++;
       }
     }
+    //exchange(start,pivot,data);
     return pivot;
   }
 
@@ -40,16 +41,16 @@ public class Quick{
         pivot++;
       }
       else if(data[lo] == data[pivot]){
-        Random rn = new random();
+  /*      Random rn = new random();
         int chance = Math.abs(rn.nextInt())%2;
         if(chance == 1){exchange(pivot,hi,data);}
-        lo++
+        lo++; */
       }
     }
     return 0;
   }
 
-  public static int[] partitionDutch(int[] data, int lo, int hi){
+  public static int[] PartitionDutch(int[] data, int lo, int hi){
     int lt = 0;
     int gt = 0;
     int[] result = new int[2];
@@ -102,7 +103,7 @@ public static void main(String[] args){
   int result = partition(data,0,1);
   int result2 = quickselect(data,0);
   int middle = median(14,23,15);
-  System.out.println(middle);
+  System.out.println(result);
   System.out.println(printArray(data));
 
 }
