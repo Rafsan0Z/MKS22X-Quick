@@ -97,6 +97,10 @@ public class Driver {
         ArrayList<Integer> base = createBase(100);
         int[] tester = new int[100];
         tester = generateArry(base);
+        for(int i = 1; i < 101; i++){
+          int k = Quick.quickselect(tester,i);
+          if(k != base.get(i-1)){System.out.println("fail");}
+        }
         System.out.println("R: SUCCESS"); //R for random
     }
 }
