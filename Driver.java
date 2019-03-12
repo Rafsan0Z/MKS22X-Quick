@@ -84,25 +84,25 @@ public class Driver {
         System.out.println("4: " + test(data4, index4,0,1));
         //System.out.println(Arrays.toString(data4) + "\n");
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i < 10; i++) {
             try {
                 Random gen = new Random();
-                int[] test = new int[i * 1000 + 1];
+                int[] test = new int[i];
                 for (int j = 0; j < test.length; j++) {
                     test[j] = gen.nextInt();
                 }
                 int start = Math.abs(gen.nextInt()) % test.length;
                 int end = start + Math.abs(gen.nextInt()) % (test.length - start);
-                //System.out.println(start + ", " + end);
-                //System.out.println(Arrays.toString(test));
+                System.out.println(start + ", " + end);
+                System.out.println(Arrays.toString(test));
                 int index = Quick.partition(test, start, end);
                 if (!test(test, index,start,end)) {
-                    System.out.print("FAILURE ON LENGTH " + (i * 1000 + 1));
+                    System.out.print("FAILURE ON LENGTH " + (i));
                     System.exit(1);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.print("FAILURE ON LENGTH " + (i * 1000 + 1));
+                System.out.print("FAILURE ON LENGTH " + (i));
                 System.exit(1);
             }
             //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
