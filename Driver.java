@@ -32,7 +32,7 @@ public class Driver {
       int[] result = new int[data.size()];
       int counter = 0;
       while(data.size() != 0){
-        int index = Math.random()*data.size();
+        int index = (int)Math.random()*data.size();
         result[counter] = data.get(index);
         data.remove(index);
       }
@@ -41,32 +41,32 @@ public class Driver {
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
         //System.out.println(Arrays.toString(data1));
-        int index1a = Classwork0309.partition(data1, 0, 6);
+        int index1a = Quick.partition(data1, 0, 6);
         System.out.println("1a: " + test(data1, index1a,0,6));
         //System.out.println(Arrays.toString(data1) + " "+index1a+"\n");
         //System.out.println(Arrays.toString(data1));
-        int index1b = Classwork0309.partition(data1, 2, 5);
+        int index1b = Quick.partition(data1, 2, 5);
         System.out.println("1b: " + test(data1, index1b,2,5));
         //System.out.println(Arrays.toString(data1) + " "+index1b+"\n");
 
         int[] data2 = {6, 3, 7, -1, 7, 4, 10, -21};
         //System.out.println(Arrays.toString(data2));
-        int index2a = Classwork0309.partition(data2, 2, 7);
+        int index2a = Quick.partition(data2, 2, 7);
         System.out.println("2a: " + test(data2, index2a,2,7));
         //System.out.println(Arrays.toString(data2) + " " + index2a+"\n");
         //System.out.println(Arrays.toString(data2));
-        int index2b = Classwork0309.partition(data2, 1, 4);
+        int index2b = Quick.partition(data2, 1, 4);
         System.out.println("2b: " + test(data2, index2b,1,4));
         //System.out.println(Arrays.toString(data2) + "\n");
 
         int[] data3 = {78};
         //System.out.println(Arrays.toString(data3));
-        int index3 = Classwork0309.partition(data3, 0, 0);
+        int index3 = Quick.partition(data3, 0, 0);
         System.out.println("3: " + test(data3, index3,0,0));
         //System.out.println(Arrays.toString(data3) + "\n");
 
         int[] data4 = {3, 1};
-        int index4 = Classwork0309.partition(data4, 0, 1);
+        int index4 = Quick.partition(data4, 0, 1);
         //System.out.println(Arrays.toString(data4));
         System.out.println("4: " + test(data4, index4,0,1));
         //System.out.println(Arrays.toString(data4) + "\n");
@@ -82,7 +82,7 @@ public class Driver {
                 int end = start + Math.abs(gen.nextInt()) % (test.length - start);
                 //System.out.println(start + ", " + end);
                 //System.out.println(Arrays.toString(test));
-                int index = Classwork0309.partition(test, start, end);
+                int index = Quick.partition(test, start, end);
                 if (!test(test, index,start,end)) {
                     System.out.print("FAILURE ON LENGTH " + (i * 1000 + 1));
                     System.exit(1);
@@ -94,10 +94,10 @@ public class Driver {
             }
             //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
-        ArrayList<Integer> base = createBase(100);
-        int[] tester = new int[100];
+        ArrayList<Integer> base = createBase(10);
+        int[] tester = new int[10];
         tester = generateArry(base);
-        for(int i = 1; i < 101; i++){
+        for(int i = 1; i < 11; i++){
           int k = Quick.quickselect(tester,i);
           if(k != base.get(i-1)){System.out.println("fail");}
         }
