@@ -92,10 +92,10 @@ public class Driver {
                 System.out.print("FAILURE ON LENGTH " + (i * 1000 + 1));
                 System.exit(1);
             }
-            System.out.println("PASS ON LENGTH" + (i*1000 + 1));
+            //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
-        ArrayList<Integer> base = createBase(1000);
-        int[] tester = new int[1000];
+        ArrayList<Integer> base = createBase(100);
+        int[] tester = new int[100];
         tester = generateArry(base);
         System.out.println("R: SUCCESS"); //R for random
     }
