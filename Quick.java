@@ -24,7 +24,28 @@ public class Quick{
     return pivot;
   }
 
-  public int partitionDutch(int[] data, int lo, int hi){
+  public static int partitionDutch(int[] data, int lo, int hi){
+    int pivot = median(lo,hi,0);
+    exchange(lo,pivot,data);
+    pivot = lo;
+    lo++;
+    while(hi >= lo){
+      if(data[lo] > data[pivot]){
+        exchange(lo,hi,data);
+        hi--;
+      }
+      else if(data[lo] < data[pivot]){
+        exchange(pivot,lo,data);
+        lo++;
+        pivot++;
+      }
+      else if(data[lo] == data[pivot]){
+        Random rn = new random();
+        int chance = Math.abs(rn.nextInt())%2;
+        if(chance == 1){exchange(pivot,hi,data);}
+        lo++
+      }
+    }
     return 0;
   }
 
