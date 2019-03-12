@@ -31,7 +31,7 @@ public class Driver {
     public static int[] generateArry(ArrayList<Integer> data){
       int[] result = new int[data.size()];
       int counter = 0;
-      while(data.size() != 0){
+      while(data.size() > 0){
         int index = (int)Math.random()*data.size();
         result[counter] = data.get(index);
         data.remove(index);
@@ -95,12 +95,17 @@ public class Driver {
             //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
         ArrayList<Integer> base = createBase(10);
+        ArrayList<Integer> copy = new ArrayList<Integer>();
+        for(int j = 0; j < base.size(); j++){
+          copy.add(base.get(j));
+        }
         int[] tester = new int[10];
         tester = generateArry(base);
-        for(int i = 1; i < 11; i++){
+        System.out.println(copy.size());
+      /*  for(int i = 1; i < 11; i++){
           int k = Quick.quickselect(tester,i);
           if(k != base.get(i-1)){System.out.println("fail");}
-        }
+        }*/
         System.out.println("R: SUCCESS"); //R for random
     }
 }
