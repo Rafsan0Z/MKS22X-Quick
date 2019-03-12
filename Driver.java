@@ -38,6 +38,17 @@ public class Driver {
       }
       return result;
     }
+
+    public static String printArray(int[] ary) {
+   String result = "[";
+   for (int i = 0; i < ary.length ; i++) {
+    result += " " + ary[i];
+    if (i != ary.length - 1) {
+      result += ",";
+    }
+  }
+    return result + "]";
+  }
     public static void main(String[] args) {
         int[] data1 = {10, 80, 30, 90, 40, 50, 70};
         //System.out.println(Arrays.toString(data1));
@@ -101,11 +112,10 @@ public class Driver {
         }
         int[] tester = new int[10];
         tester = generateArry(base);
-        System.out.println(copy.size());
-      /*  for(int i = 1; i < 11; i++){
-          int k = Quick.quickselect(tester,i);
-          if(k != base.get(i-1)){System.out.println("fail");}
-        }*/
+        System.out.println(base);
+        System.out.println(copy);
+        int k = Quick.quickselect(tester,3);
+        System.out.println(k);
         System.out.println("R: SUCCESS"); //R for random
     }
 }
