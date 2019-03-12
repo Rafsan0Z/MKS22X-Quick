@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Quick{
 
   public static int partition(int[]data, int start, int end){
@@ -26,7 +27,8 @@ public class Quick{
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
-    int pivot = median(lo,hi,0);
+    double random = Math.random()*(hi-lo);
+    int pivot = (int)random + lo;
     exchange(lo,pivot,data);
     pivot = lo;
     lo++;
@@ -41,13 +43,13 @@ public class Quick{
         pivot++;
       }
       else if(data[lo] == data[pivot]){
-  /*      Random rn = new random();
+        Random rn = new Random();
         int chance = Math.abs(rn.nextInt())%2;
         if(chance == 1){exchange(pivot,hi,data);}
-        lo++; */
+        lo++;
       }
     }
-    return 0;
+    return pivot;
   }
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
@@ -97,7 +99,7 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
   System.out.println(printArray(data));
-  int result = partition(data,0,10);
+  int result = partitionDutch(data,0,10);
   int result2 = quickselect(data,0);
   int middle = median(14,23,15);
   System.out.println(result);
