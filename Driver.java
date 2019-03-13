@@ -84,7 +84,7 @@ public class Driver {
         System.out.println("4: " + test(data4, index4,0,1));
         //System.out.println(Arrays.toString(data4) + "\n");
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < Integer.parseInt(args[0]); i++) {
             try {
                 Random gen = new Random();
                 int[] test = new int[i];
@@ -93,6 +93,7 @@ public class Driver {
                 }
                 int start = Math.abs(gen.nextInt()) % test.length;
                 int end = start + Math.abs(gen.nextInt()) % (test.length - start);
+                System.out.println("----------------------------");
                 System.out.println(start + ", " + end);
                 System.out.println(Arrays.toString(test));
                 int index = Quick.partition(test, start, end);
@@ -102,6 +103,7 @@ public class Driver {
                 }
                 System.out.println(index);
                 System.out.println(Arrays.toString(test));
+                System.out.println("----------------------------");
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.print("FAILURE ON LENGTH " + (i));
@@ -109,7 +111,7 @@ public class Driver {
             }
             //System.out.println("PASS ON LENGTH" + (i*1000 + 1));
         }
-        int num = Integer.parseInt(args[0]);
+        /* int num = Integer.parseInt(args[0]);
         ArrayList<Integer> base = createBase(num);
         ArrayList<Integer> copy = new ArrayList<Integer>();
         for(int j = 0; j < num; j++){
@@ -120,7 +122,7 @@ public class Driver {
         for(int i = 0; i< num-1; i++){
           int k = Quick.quickselect(tester,i);
           if(k != copy.get(i)){System.out.println("fail!");}
-        }
+        }*/
         System.out.println("R: SUCCESS"); //R for random
     }
 }
