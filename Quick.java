@@ -111,14 +111,24 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
   QuickSortHelper(data,pivot+1,hi);
 }
 
+public static int[] createBase(int size){
+  int[] result = new int[size];
+  for(int i = 0; i < size; i++){
+    int num = (int)Math.random()*10;
+    result[i] = num;
+  }
+  return result;
+}
+
 public static void main(String[] args){
 
-  int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
+  int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
   System.out.println(printArray(data));
-  int result = partition(data,0,10);
-  int result2 = quickselect(data,0);
-  int middle = median(14,23,15);
-  System.out.println(result);
+  quicksort(data);
+  //int result = partition(data,0,10);
+  //int result2 = quickselect(data,0);
+  //int middle = median(14,23,15);
+  //System.out.println(result);
   System.out.println(printArray(data));
 
 }
