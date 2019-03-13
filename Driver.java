@@ -89,7 +89,7 @@ public class Driver {
                 Random gen = new Random();
                 int[] test = new int[i];
                 for (int j = 0; j < test.length; j++) {
-                    test[j] = gen.nextInt();
+                    test[j] = Math.abs(gen.nextInt())%15;
                 }
                 int start = Math.abs(gen.nextInt()) % test.length;
                 int end = start + Math.abs(gen.nextInt()) % (test.length - start);
@@ -100,6 +100,8 @@ public class Driver {
                     System.out.print("FAILURE ON LENGTH " + (i));
                     System.exit(1);
                 }
+                System.out.println(index);
+                System.out.println(Arrays.toString(test));
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.print("FAILURE ON LENGTH " + (i));
