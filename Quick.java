@@ -27,12 +27,12 @@ public class Quick{
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
-    double random = Math.random()*(hi-lo);
-    int pivot = (int)random + lo;
-    int pivotInt = data[pivot];
     int lower = lo;
     int between = lo+1;
     int higher = hi;
+    double random = Math.random()*(hi-lo);
+    int pivot = (int)random + lo;
+    int pivotInt = data[pivot];
     exchange(lo,pivot,data);
     while(higher >= between){
       if(data[between] > pivotInt){
@@ -103,7 +103,12 @@ public static void quicksort(int[] data){
 }
 
 public static void QuickSortHelper(int[] data, int lo, int hi){
-
+  if(lo >= hi){
+    return;
+  }
+  int pivot = partition(data,lo,hi);
+  QuickSortHelper(data,lo,pivot-1);
+  QuickSortHelper(data,pivot+1,hi);
 }
 
 public static void main(String[] args){
