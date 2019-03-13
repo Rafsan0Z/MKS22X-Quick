@@ -98,7 +98,7 @@ public class Quick{
 }
 
 public static void quicksort(int[] data){
-  int end = data.length()-1;
+  int end = data.length-1;
   QuickSortHelper(data,0,end);
 }
 
@@ -115,7 +115,7 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14};
   System.out.println(printArray(data));
-  int result = partitionDutch(data,0,10);
+  int result = partition(data,0,10);
   int result2 = quickselect(data,0);
   int middle = median(14,23,15);
   System.out.println(result);
