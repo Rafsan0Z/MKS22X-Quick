@@ -44,21 +44,24 @@ public class Quick{
         lo++;
       }
       else if(data[lo] == pivotInt){
-        /*Random rn = new Random();
+        Random rn = new Random();
         int chance = Math.abs(rn.nextInt())%2;
         if(chance == 0){
           exchange(lo,hi,data);
           hi--;
-        }*/
-        lo++;
+        }
+        else{lo++;}
       }
     }
     return pivot;
   }
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
-    int lt = 0;
-    int gt = 0;
+    int less = 0;
+    int greater = 0;
+    int num = (int)Math.random()*(hi-lo);
+    int pivot = num+lo;
+    exchange(lo,pivot,data);
     int[] result = new int[2];
     result[0] = lt;
     result[1] = gt;
