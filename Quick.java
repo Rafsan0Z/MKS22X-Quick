@@ -64,7 +64,7 @@ public class Quick{
     exchange(lo,pivot,data);
     int pivotInt = data[pivot];
     int index = lo;
-    while(index != greater+1){
+    while(index <= greater){
       if(data[index] > pivotInt){
         exchange(index,greater,data);
         greater--;
