@@ -57,11 +57,19 @@ public class Quick{
   }
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
-    int less = 0;
-    int greater = 0;
+    int less = lo;
+    int greater = hi;
     int num = (int)Math.random()*(hi-lo);
     int pivot = num+lo;
     exchange(lo,pivot,data);
+    int pivotInt = data[pivot];
+    int index = lo;
+    while(index != greater){
+      if(data[index] > pivotInt){
+        exchange(index,greater,data);
+        greater--;
+      }
+    }
     int[] result = new int[2];
     result[0] = less;
     result[1] = greater;
