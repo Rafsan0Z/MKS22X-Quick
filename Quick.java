@@ -27,34 +27,33 @@ public class Quick{
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
-    int lower = lo;
-    int between = lo+1;
-    int higher = hi;
     double random = Math.random()*(hi-lo);
     int pivot = (int)random + lo;
-    int pivotInt = data[pivot];
     exchange(lo,pivot,data);
-    while(higher >= between){
-      if(data[between] > pivotInt){
-        exchange(between,higher,data);
-        higher--;
+    int pivotInt = data[pivot];
+    pivot = lo;
+    lo++;
+    while(hi >= lo){
+      if(data[lo] > pivotInt){
+        exchange(lo,hi,data);
+        hi--;
       }
-      else if(data[between] < pivotInt){
-        exchange(lower,between,data);
-        lower++;
-        between++;
+      else if(data[lo] < pivotInt){
+        exchange(pivot,lo,data);
+        pivot = lo;
+        lo++;
       }
-      else if(data[between] == pivotInt){
-        Random rn = new Random();
+      else if(data[lo] == pivotInt){
+        /*Random rn = new Random();
         int chance = Math.abs(rn.nextInt())%2;
-        if(chance == 1){
-          exchange(between,higher,data);
-          higher--;
-        }
-        else{between++;}
+        if(chance == 0){
+          exchange(lo,hi,data);
+          hi--;
+        }*/
+        lo++;
       }
     }
-    return higher;
+    return pivot;
   }
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
