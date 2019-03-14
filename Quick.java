@@ -44,10 +44,10 @@ public class Quick{
         lower++;
         between++;
       }
-      else if(data[lower] == pivotInt){
+      else if(data[between] == pivotInt){
         /*Random rn = new Random();
         int chance = Math.abs(rn.nextInt())%2;
-        if(chance == 1){exchange(pivot,hi,data);} */
+        if(chance == 1){exchange(pivot,higher,data);}*/
         between++;
       }
     }
@@ -106,7 +106,7 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
   if(lo >= hi){
     return;
   }
-  int pivot = partition(data,lo,hi);
+  int pivot = partitionDutch(data,lo,hi);
   QuickSortHelper(data,lo,pivot-1);
   QuickSortHelper(data,pivot+1,hi);
 }
