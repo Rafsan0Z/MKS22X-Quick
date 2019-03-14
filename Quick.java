@@ -2,8 +2,8 @@ import java.util.Random;
 public class Quick{
 
   public static int partition(int[]data, int start, int end){
-    double random = Math.random()*(end-start);
-    int pivot = (int)random + start;
+    Random rn = new Random();
+    int pivot = rn.nextInt(end-start) + start;
     exchange(start,pivot,data);
     int pivotInt = data[start];
     pivot = start;
