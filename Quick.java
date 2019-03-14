@@ -30,7 +30,7 @@ public class Quick{
     double random = Math.random()*(hi-lo);
     int pivot = (int)random + lo;
     exchange(lo,pivot,data);
-    int pivotInt = data[pivot];
+    int pivotInt = data[lo];
     pivot = lo;
     lo++;
     while(hi >= lo){
