@@ -63,8 +63,8 @@ public class Quick{
     int pivot = num+lo;
     exchange(lo,pivot,data);
     int[] result = new int[2];
-    result[0] = lt;
-    result[1] = gt;
+    result[0] = less;
+    result[1] = greater;
     return result;
   }
 
@@ -111,7 +111,7 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
   if(lo >= hi){
     return;
   }
-  int pivot = partitionDutch(data,lo,hi);
+  int pivot = partition(data,lo,hi);
   QuickSortHelper(data,lo,pivot-1);
   QuickSortHelper(data,pivot+1,hi);
 }
