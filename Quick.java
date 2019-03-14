@@ -45,10 +45,13 @@ public class Quick{
         between++;
       }
       else if(data[between] == pivotInt){
-        /*Random rn = new Random();
+        Random rn = new Random();
         int chance = Math.abs(rn.nextInt())%2;
-        if(chance == 1){exchange(pivot,higher,data);}*/
-        between++;
+        if(chance == 1){
+          exchange(between,higher,data);
+          higher--;
+        }
+        else{between++;}
       }
     }
     return higher;
