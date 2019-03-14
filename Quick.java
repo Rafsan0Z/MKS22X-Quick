@@ -69,6 +69,14 @@ public class Quick{
         exchange(index,greater,data);
         greater--;
       }
+      else if(data[index] < pivotInt){
+        exchange(index,less,data);
+        less++;
+        index++;
+      }
+      else if(data[index] == pivotInt){
+        index++;
+      }
     }
     int[] result = new int[2];
     result[0] = less;
