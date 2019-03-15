@@ -147,7 +147,8 @@ public static void quicksort(int[] data){
 }
 
 public static void QuickSortHelper(int[] data, int lo, int hi){
-  if(lo >= hi){
+  if(hi - lo <= 50){
+    insertionSort(data,lo,hi);
     return;
   }
   int pivot = partitionDutch(data,lo,hi);
@@ -168,7 +169,7 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
   System.out.println(printArray(data));
-  insertionSort(data,0,5);
+  quicksort(data);
   //int result = partition(data,0,10);
   //int result2 = quickselect(data,0);
   //int middle = median(14,23,15);
