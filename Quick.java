@@ -141,13 +141,13 @@ public class Quick{
   return result + "]";
 }
 
-public static void quicksort(int[] data){
+public static void quicksort(int[] data, int opt){
   int end = data.length-1;
-  QuickSortHelper(data,0,end);
+  QuickSortHelper(data,0,end,opt);
 }
 
-public static void QuickSortHelper(int[] data, int lo, int hi){
-  if(hi - lo <= 57){
+public static void QuickSortHelper(int[] data, int lo, int hi, int opt){
+  if(hi - lo <= opt){
     insertionSort(data,lo,hi);
     return;
   }
