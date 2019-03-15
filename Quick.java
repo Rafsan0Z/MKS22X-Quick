@@ -34,8 +34,8 @@ public class Quick{
     }
   }
 
-  public static void insertionSort(int[] ary) {
-    for(int i = 0; i < ary.length; i++) {
+  public static void insertionSort(int[] ary, int lo, int hi) {
+    for(int i = lo; i < hi+1; i++) {
       int current = ary[i];
       int place = i;
       while(place != 0 && ary[place - 1] > current) {
@@ -168,7 +168,7 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
   System.out.println(printArray(data));
-  quicksort(data);
+  insertionSort(data,0,5);
   //int result = partition(data,0,10);
   //int result2 = quickselect(data,0);
   //int middle = median(14,23,15);
