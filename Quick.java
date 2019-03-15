@@ -22,7 +22,7 @@ public class Quick{
       }
     }
     //exchange(start,pivot,data);
-    return start;
+    return end;
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
