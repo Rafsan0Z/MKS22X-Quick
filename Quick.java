@@ -35,8 +35,11 @@ public class Quick{
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
+    if(lo == hi){
+      return lo;
+    }
     Random rn = new Random();
-    int pivot = median(data,lo,hi);
+    int pivot = (lo+hi)/2;
     exchange(lo,pivot,data);
     int pivotInt = data[pivot];
     int index = lo;
@@ -90,11 +93,11 @@ public class Quick{
 
   public static int median(int[] data, int lo, int hi){
     int num = hi - lo;
-    if(data.length % 2 == 0){
-      return num/2;
+    if(num % 2 == 0){
+      return (hi+lo)/2;
     }
     else{
-      return (num+1)/2;
+      return (hi+lo+1)/2;
     }
   }
 
