@@ -34,6 +34,18 @@ public class Quick{
     }
   }
 
+  public static void insertionSort(int[] ary) {
+    for(int i = 0; i < ary.length; i++) {
+      int current = ary[i];
+      int place = i;
+      while(place != 0 && ary[place - 1] > current) {
+        ary[place] = ary[place - 1];
+        ary[place - 1] = current;
+        place--;
+      }
+    }
+  }
+
   public static int partitionDutch(int[] data, int lo, int hi){
     if(lo == hi){
       return lo;
