@@ -25,9 +25,19 @@ public class Quick{
     return end;
   }
 
+  private static int middle(int[] data){
+    if(data.length % 2 == 0){
+      return data[data.length%2];
+    }
+    else{
+      return data[(data.length-1)%2];
+    }
+  }
+
   public static int partitionDutch(int[] data, int lo, int hi){
     Random rn = new Random();
-    int pivot = rn.nextInt(hi-lo) + lo;
+    int mid = middle(data);
+    int pivot = median(lo,mid,hi);
     exchange(lo,pivot,data);
     int pivotInt = data[pivot];
     int index = lo;
@@ -120,7 +130,7 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
   if(lo >= hi){
     return;
   }
-  int pivot = partition(data,lo,hi);
+  int pivot = partitionDutch(data,lo,hi);
   QuickSortHelper(data,lo,pivot-1);
   QuickSortHelper(data,pivot+1,hi);
 }
