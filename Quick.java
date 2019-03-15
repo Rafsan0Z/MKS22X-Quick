@@ -52,6 +52,8 @@ public class Quick{
         index++;
       }
       else if(data[index] == pivotInt){
+        int chance = Math.abs(rn.nextInt()) % 2;
+        if(chance == 0){exchange(hi,index,data);}
         index++;
       }
     }
