@@ -5,17 +5,17 @@ public static void main(String[]args){
   System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult\tOptimization ");
   int num = Integer.parseInt(args[0]);
   int[]MAX_LIST = {1000000000,500,10};
-  int count = 0;
-  int total = 0;
+  double count = 0;
+  double total = 0;
   for(int MAX : MAX_LIST){
-    for(int size = 15625; size < 32000001; size*=2){
+    for(int size = 31250; size < 2000001; size*=2){
       long qtime=0;
       long btime=0;
       long Qtime = 0;
       //average of 5 sorts.
       String result = "";
       String check = "";
-      for(int trial = 0 ; trial <=5; trial++){
+      for(int trial = 0 ; trial <=10; trial++){
         int []data1 = new int[size];
         int []data2 = new int[size];
         int []data3 = new int[size];
@@ -57,8 +57,8 @@ public static void main(String[]args){
         check = "BETTER!";
         count++;
       }
-      total++;
       System.out.println(size +"\t\t"+MAX+"\t"+1.0*qtime/btime+"\t"+result+"\t"+check);
+      total++;
     }
     System.out.println("OPTIMIZATION %: " + (count/total)*100);
     System.out.println();
