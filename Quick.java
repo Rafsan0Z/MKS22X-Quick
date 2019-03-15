@@ -89,10 +89,14 @@ public class Quick{
     return result;
   }
 
-  public static int median(int num1, int num2, int num3){
-    if(num1 < num2 && num2 < num3){return num2;}
-    else if(num2 < num1 && num1 < num3){return num1;}
-    else{return num3;}
+  public static int median(int[] data, int lo, int hi){
+    int num = hi - lo;
+    if(data.length % 2 == 0){
+      return data[num/2];
+    }
+    else{
+      return data[(num+1)/2];
+    }
   }
 
   public static int quickselect(int[] data, int k){
