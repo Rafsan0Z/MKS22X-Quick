@@ -5,25 +5,24 @@ public class Quick{
     Random rn = new Random();
     int pivot = rn.nextInt(end-start) + start;
     exchange(start,pivot,data);
-    int pivotInt = data[start];
-    pivot = start;
-    start++;
-    while(end >= start){
-      if(data[start] > pivotInt){
-        exchange(start,end,data);
+    int pivotInt = data[pivot];
+    int index = start;
+    while(index <= end){
+      if(data[index] > pivotInt){
+        exchange(index,end,data);
         end--;
       }
-      else if(data[start] < pivotInt){
-        exchange(pivot,start,data);
-        pivot = start;
+      else if(data[index] < pivotInt){
+        exchange(start,index,data);
         start++;
+        index++;
       }
-      else if(data[start] == pivotInt){
-        start++;
+      else if(data[index] == pivotInt){
+        index++;
       }
     }
     //exchange(start,pivot,data);
-    return pivot;
+    return start;
   }
 
   public static int partitionDutch(int[] data, int lo, int hi){
