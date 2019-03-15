@@ -30,12 +30,12 @@ public static void main(String[]args){
           System.out.println("FAIL TO SORT!");
           System.exit(0);
         }
-        if(qtime/btime > 3.0){
+      /*  if(qtime/btime > 3.0){
           result = "FAIL!";
         }
         if(qtime/btime < 3.0){
           result = "PASS!";
-        }
+        } */
       }
       System.out.println(size +"\t\t"+MAX+"\t"+1.0*qtime/btime+"\t"+result);
     }

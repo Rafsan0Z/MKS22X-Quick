@@ -151,9 +151,9 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
     insertionSort(data,lo,hi);
     return;
   }
-  int pivot = partitionDutch(data,lo,hi);
-  QuickSortHelper(data,lo,pivot-1);
-  QuickSortHelper(data,pivot+1,hi);
+  int[] pivot = PartitionDutch(data,lo,hi);
+  QuickSortHelper(data,lo,pivot[0]-1);
+  QuickSortHelper(data,pivot[1]+1,hi);
 }
 
 public static int[] createBase(int size){
