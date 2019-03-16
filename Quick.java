@@ -132,11 +132,17 @@ public class Quick{
   public static int quickselect(int[] data, int k){
     int start = 0;
     int end = data.length - 1;
-    int result = PartitionDutch(data,start,end);
+    int[] result = PartitionDutch(data,start,end);
     int point = result[0];
     while(k != point){
-      if(k < point){point = partition(data,0,point);}
-      else if( k > point){point = partition(data,point,end);}
+      if(k < point){
+        result = partition(data,0,point);
+        point = result[0];
+      }
+      else if( k > point){
+        result = partition(data,point,end);
+        point = result[0];
+      }
     }
     return data[point];
   }
@@ -186,9 +192,9 @@ public static void main(String[] args){
 
   int[] data = new int[] {8,6,7,5,3,0,9,10,21,2,14,4,5,2,7,9,12,6};
   System.out.println(printArray(data));
-  quicksort(data);
+  //quicksort(data);
   //int result = partition(data,0,10);
-  //int result2 = quickselect(data,0);
+  int result2 = quickselect(data,0);
   //int middle = median(14,23,15);
   //System.out.println(result);
   System.out.println(printArray(data));
