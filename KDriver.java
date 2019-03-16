@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class KDriver{
 
 public static void main(String[]args){
-  System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult\tArraySort Time\tInsertionSort Time ");
+  System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult");
   int[]MAX_LIST = {5000,500,50,10};
   double count = 0;
   double count2 = 0;
