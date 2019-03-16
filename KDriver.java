@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class KDriver{
 
 public static void main(String[]args){
-  System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult\tOptimization ");
+  System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult\tArraySort Time\tNormal Partition Time ");
   int[]MAX_LIST = {1000000000,50000,5000,500,50,10};
   double count = 0;
   double total = 0;
@@ -51,7 +51,8 @@ public static void main(String[]args){
       System.out.println(size +"\t\t"+MAX+"\t"+1.0*qtime/btime+"\t"+result+"\t"+check);
       total++;
     }
-    System.out.println("BETTER %: " + (count/total)*100);
+    System.out.println("ArraySort BETTER %: " + (count/total)*100);
+    System.out.println("Normal Partition BETTER %: " + (count2/total)*100);
     total = 0;
     System.out.println();
   }
