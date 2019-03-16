@@ -34,6 +34,10 @@ public class Quick{
     }
   }
 
+  public static void insertionSort(int[] ary){
+    insertionSort(ary,0,ary.length-1);
+  }
+
   public static void insertionSort(int[] ary, int lo, int hi) {
     for(int i = lo; i < hi+1; i++) {
       int current = ary[i];
