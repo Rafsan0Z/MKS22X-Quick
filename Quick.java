@@ -51,7 +51,8 @@ public class Quick{
     }
   }
 
-  public static int partitionDutch(int[] data, int lo, int hi){
+// partitionDutch
+  /*public static int partitionDutch(int[] data, int lo, int hi){
     if(lo == hi){
       return lo;
     }
@@ -78,7 +79,7 @@ public class Quick{
     }
     //exchange(start,pivot,data);
     return hi;
-  }
+  }*/
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
     Random rn = new Random();
