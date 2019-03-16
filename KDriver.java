@@ -41,10 +41,10 @@ public static void main(String[]args){
       if(qtime/btime < 3.0){
         result = "PASS!";
       }
-      if(btime > qtime){
+      if(btime < qtime){
         check = "WORSE!";
       }
-      if(qtime >= btime){
+      if(qtime <= btime){
         check = "BETTER!";
         count++;
       }
