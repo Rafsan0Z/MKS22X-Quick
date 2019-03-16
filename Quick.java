@@ -132,7 +132,8 @@ public class Quick{
   public static int quickselect(int[] data, int k){
     int start = 0;
     int end = data.length - 1;
-    int point = partition(data,start,end);
+    int result = PartitionDutch(data,start,end);
+    int point = result[0];
     while(k != point){
       if(k < point){point = partition(data,0,point);}
       else if( k > point){point = partition(data,point,end);}
