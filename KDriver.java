@@ -8,7 +8,7 @@ public static void main(String[]args){
   double count2 = 0;
   double total = 0;
   for(int MAX : MAX_LIST){
-    for(int size = 20; size < 2001; size+=10){
+    for(int size = 20000; size < 2000001; size+=10000){
       long qtime=0;
       long btime=0;
       long Qtime = 0;
