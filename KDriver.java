@@ -3,12 +3,12 @@ public class KDriver{
 
 public static void main(String[]args){
   System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult\tArraySort Time\tInsertionSort Time ");
-  int[]MAX_LIST = {1000000000,50000,5000,500,50,10};
+  int[]MAX_LIST = {5000,500,50,10};
   double count = 0;
   double count2 = 0;
   double total = 0;
   for(int MAX : MAX_LIST){
-    for(int size = 20000; size < 2000001; size+=100000){
+    for(int size = 20; size < 2001; size+=10){
       long qtime=0;
       long btime=0;
       long Qtime = 0;
