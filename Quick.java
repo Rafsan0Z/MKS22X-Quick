@@ -136,11 +136,11 @@ public class Quick{
     int point = result[0];
     while(k != point){
       if(k < point){
-        result = partition(data,0,point);
+        result = PartitionDutch(data,0,point);
         point = result[0];
       }
       else if( k > point){
-        result = partition(data,point,end);
+        result = PartitionDutch(data,point,end);
         point = result[0];
       }
     }
@@ -197,7 +197,7 @@ public static void main(String[] args){
   int result2 = quickselect(data,0);
   //int middle = median(14,23,15);
   //System.out.println(result);
-  System.out.println(printArray(data));
+  System.out.println(printArray(result2));
 
 }
 
