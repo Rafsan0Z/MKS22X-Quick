@@ -3,25 +3,24 @@ public class Quick{
 
 // Original Partition
   public static int partition(int[]data, int start, int end){
+    if(start == end){return start;}
+    Random rn = new Random();
     int pivot = (start+end)/2;
     exchange(start,pivot,data);
     pivot = start;
     start++;
     int pivotInt = data[pivot];
-    while(start != end){
+    while(end != start){
       if(data[start] > pivotInt){
         exchange(start,end,data);
         end--;
       }
       else if(data[start] < pivotInt){
-        //exchange(start,pivot,data);
         start++;
       }
       else if(data[start] == pivotInt){
-        Random rn = new Random();
         int chance = Math.abs(rn.nextInt()) % 2;
         if(chance == 0){
-          //exchange(start,pivot,data);
           start++;
         }
         else{
@@ -144,7 +143,7 @@ public class Quick{
     int point = partition(data,start,end);
     while(k != point){
       if(k < point){
-        point = partition(data,0,point);
+        point = partition(data,start,point);
       }
       else if( k > point){
         point = partition(data,point,end);
