@@ -8,20 +8,20 @@ public class Quick{
     pivot = start;
     start++;
     int pivotInt = data[pivot];
-    while(start <= end){
+    while(start != end){
       if(data[start] > pivotInt){
         exchange(start,end,data);
         end--;
       }
-      else if(data[start] <= pivotInt){
-        exchange(start,pivot,data);
+      else if(data[start] < pivotInt){
+        //exchange(start,pivot,data);
         start++;
       }
       else if(data[start] == pivotInt){
         Random rn = new Random();
         int chance = Math.abs(rn.nextInt()) % 2;
         if(chance == 0){
-          exchange(start,pivot,data);
+          //exchange(start,pivot,data);
           start++;
         }
         else{
@@ -30,6 +30,8 @@ public class Quick{
         }
       }
     }
+    if(data[start] >= pivotInt){start--;}
+    exchange(start,pivot,data);
     return start;
   }
 
@@ -198,7 +200,7 @@ public static void main(String[] args){
   System.out.println(printArray(data));
   //quicksort(data);
   //int result = partition(data,0,10);
-  for(int i = 1; i < data.length; i++){
+  for(int i = 0; i < data.length; i++){
   int result2 = quickselect(data,i);
   System.out.println(result2);
 }
