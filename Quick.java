@@ -3,32 +3,29 @@ public class Quick{
 
 // Original Partition
   public static int partition(int[]data, int start, int end){
-    Random rn = new Random();
-    int pivot = rn.nextInt(end-start) + start;
+    int pivot = (start+end)/2;
     exchange(start,pivot,data);
     int pivotInt = data[pivot];
-    int index = start;
-    while(index <= end){
-      if(data[index] > pivotInt){
-        exchange(index,end,data);
+    while(start <= end){
+      if(data[start] > pivotInt){
+        exchange(start,end,data);
         end--;
       }
-      else if(data[index] < pivotInt){
-        exchange(start,index,data);
+      else if(data[start] < pivotInt){
+        exchange(start,pivot,data);
         start++;
-        index++;
       }
-      else if(data[index] == pivotInt){
-        index++;
+      else if(data[start] == pivotInt){
+        start++;
       }
     }
-    if(data[index] < pivotInt){
-    exchange(index,pivot,data);
+    /*if(data[start] < pivotInt){
+    exchange(start,pivot,data);
   }
   else{
-    exchange(index-1,pivot,data);
+    exchange(start-1,pivot,data);
     start--;
-  }
+  }*/
     return end;
   }
 
