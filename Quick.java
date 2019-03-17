@@ -2,7 +2,7 @@ import java.util.Random;
 public class Quick{
 
 // Original Partition
-  /*public static int partition(int[]data, int start, int end){
+  public static int partition(int[]data, int start, int end){
     Random rn = new Random();
     int pivot = rn.nextInt(end-start) + start;
     exchange(start,pivot,data);
@@ -24,7 +24,7 @@ public class Quick{
     }
     //exchange(start,pivot,data);
     return end;
-  }*/
+  }
 
   private static int middle(int[] data){
     if(data.length % 2 == 0){
@@ -132,16 +132,13 @@ public class Quick{
   public static int quickselect(int[] data, int k){
     int start = 0;
     int end = data.length - 1;
-    int[] result = PartitionDutch(data,start,end);
-    int point = result[0];
+    int point = partition(data,start,end);
     while(k != point){
       if(k < point){
-        result = PartitionDutch(data,0,point);
-        point = result[0];
+        point = partition(data,0,point);
       }
       else if( k > point){
-        result = PartitionDutch(data,point,end);
-        point = result[1];
+        point = partition(data,point,end);
       }
     }
     return data[point];
