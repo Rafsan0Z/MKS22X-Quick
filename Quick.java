@@ -5,28 +5,32 @@ public class Quick{
   public static int partition(int[]data, int start, int end){
     int pivot = (start+end)/2;
     exchange(start,pivot,data);
+    pivot = start;
+    start++;
     int pivotInt = data[pivot];
     while(start <= end){
       if(data[start] > pivotInt){
         exchange(start,end,data);
         end--;
       }
-      else if(data[start] < pivotInt){
+      else if(data[start] <= pivotInt){
         exchange(start,pivot,data);
         start++;
       }
       else if(data[start] == pivotInt){
-        start++;
+        Random rn = new Random();
+        int chance = Math.abs(rn.nextInt()) % 2;
+        if(chance == 0){
+          exchange(start,pivot,data);
+          start++;
+        }
+        else{
+          exchange(start,end,data);
+          end--;
+        }
       }
     }
-    /*if(data[start] < pivotInt){
-    exchange(start,pivot,data);
-  }
-  else{
-    exchange(start-1,pivot,data);
-    start--;
-  }*/
-    return end;
+    return start;
   }
 
   private static int middle(int[] data){
