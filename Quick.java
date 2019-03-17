@@ -199,7 +199,7 @@ public static void main(String[] args){
   System.out.println(printArray(data));
   //quicksort(data);
   //int result = partition(data,0,10);
-  for(int i = 0; i < data.length; i++){
+  for(int i = 0; i < data.length-1; i++){
   int result2 = quickselect(data,i);
   System.out.println(result2);
 }
