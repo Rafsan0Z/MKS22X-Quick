@@ -3,7 +3,7 @@ public class KDriver{
 
 public static void main(String[]args){
   System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult");
-  int[]MAX_LIST = {1000000000,5000,500,50,10};
+  int[]MAX_LIST = {1000000000,5000,500,10};
   double count = 0;
   double total = 0;
   for(int MAX : MAX_LIST){

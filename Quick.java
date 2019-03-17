@@ -109,18 +109,9 @@ public class Quick{
         index++;
       }
       else if(data[index] == pivotInt){
-        int chance = Math.abs(rn.nextInt()) % 2;
-        if(chance == 0){
-          exchange(index,greater,data);
-          greater--;
-        }
-        else{
-          exchange(index,less,data);
-          less++;
-          index++;
-        }
-      }
+        index++;
     }
+  }
     int[] result = new int[2];
     result[0] = less;
     result[1] = greater;
@@ -206,5 +197,4 @@ public static void main(String[] args){
   //int middle = median(14,23,15);
   //System.out.println(result);
 }
-
 }
