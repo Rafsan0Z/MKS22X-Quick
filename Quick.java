@@ -22,7 +22,13 @@ public class Quick{
         index++;
       }
     }
-    //exchange(start,pivot,data);
+    if(data[index] < pivotInt){
+    exchange(index,pivot,data);
+  }
+  else{
+    exchange(index-1,pivot,data);
+    start--;
+  }
     return end;
   }
 
@@ -191,7 +197,7 @@ public static void main(String[] args){
   System.out.println(printArray(data));
   //quicksort(data);
   //int result = partition(data,0,10);
-  for(int i = 0; i < data.length; i++){
+  for(int i = 1; i < data.length; i++){
   int result2 = quickselect(data,i);
   System.out.println(result2);
 }
