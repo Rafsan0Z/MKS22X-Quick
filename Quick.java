@@ -8,30 +8,31 @@ public class Quick{
     int pivot = (start+end)/2;
     exchange(start,pivot,data);
     pivot = start;
-    start++;
+    int index = start;
+    index++;
     int pivotInt = data[pivot];
-    while(end != start){
-      if(data[start] > pivotInt){
-        exchange(start,end,data);
+    while(end != index){
+      if(data[index] > pivotInt){
+        exchange(index,end,data);
         end--;
       }
-      else if(data[start] < pivotInt){
-        start++;
+      else if(data[index] < pivotInt){
+        index++;
       }
-      else if(data[start] == pivotInt){
+      else if(data[index] == pivotInt){
         int chance = Math.abs(rn.nextInt()) % 2;
         if(chance == 0){
-          start++;
+          index++;
         }
         else{
-          exchange(start,end,data);
+          exchange(index,end,data);
           end--;
         }
       }
     }
-    if(data[start] >= pivotInt){start--;}
-    exchange(start,pivot,data);
-    return start;
+    if(data[index] >= pivotInt){index--;}
+    exchange(index,pivot,data);
+    return index;
   }
 
   private static int middle(int[] data){
