@@ -49,10 +49,10 @@ public class Quick{
   }
 
   public static void insertionSort(int[] ary, int lo, int hi) {
-    for(int i = lo; i < hi+1; i++) {
+    for(int i = lo+1; i < hi+1; i++) {
       int current = ary[i];
       int place = i;
-      while(place != 0 && ary[place - 1] > current) {
+      while(place-1 >= 0 && ary[place - 1] > current) {
         ary[place] = ary[place - 1];
         ary[place - 1] = current;
         place--;
@@ -91,18 +91,22 @@ public class Quick{
   }*/
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
-    Random rn = new Random();
+    if(lo == hi){
+      int[] result = new int[]{lo , lo};
+      return result;
+    }
     int less = lo;
     int greater = hi;
-    int num = (int)Math.random()*(hi-lo);
-    int pivot = num+lo;
+    int pivot = (lo+hi)/2;
     exchange(lo,pivot,data);
-    int pivotInt = data[pivot];
+    int pivotInt = data[lo];
     int index = lo;
-    while(index <= greater){
+    int stop = greater+1;
+    while(index != stop){
       if(data[index] > pivotInt){
         exchange(index,greater,data);
         greater--;
+        stop--;
       }
       else if(data[index] < pivotInt){
         exchange(index,less,data);
@@ -167,7 +171,7 @@ public static void quicksort(int[] data){
 }
 
 public static void QuickSortHelper(int[] data, int lo, int hi){
-  if(hi - lo <= 20){
+  if(hi - lo <= 250){
     insertionSort(data,lo,hi);
     return;
   }
