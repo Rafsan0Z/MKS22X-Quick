@@ -3,7 +3,7 @@ public class KDriver{
 
 public static void main(String[]args){
   System.out.println("Size\t\tMax Value\tquick/builtin ratio\tresult");
-  int[]MAX_LIST = {1000000000,5000,500,10};
+  int[]MAX_LIST = {1000000000,5000,500,50};
   double count = 0;
   double total = 0;
   for(int MAX : MAX_LIST){
@@ -22,7 +22,7 @@ public static void main(String[]args){
           data1[i] = (int)(Math.random()*MAX);
           data2[i] = data1[i];
         }
-        long t1,t2,T1,T2;
+        long t1,t2;
         t1 = System.currentTimeMillis();
         Quick.quicksort(data2);
         t2 = System.currentTimeMillis();
@@ -42,18 +42,9 @@ public static void main(String[]args){
       if(qtime/btime < 3.0){
         result = "PASS!";
       }
-      if(btime < qtime){
-        check = "WORSE!";
-      }
-      if(qtime <= btime){
-        check = "BETTER!";
-        count++;
-      }
-      System.out.println(size +"\t\t"+MAX+"\t"+1.0*qtime/btime+"\t"+result+"\t"+check);
+      System.out.println(size +"\t\t"+MAX+"\t"+1.0*qtime/btime+"\t"+result);
       total++;
     }
-    System.out.println("ArraySort BETTER %: " + (count/total)*100);
-    total = 0;
     System.out.println();
   }
 }
