@@ -167,7 +167,7 @@ public static void quicksort(int[] data){
 }
 
 public static void QuickSortHelper(int[] data, int lo, int hi){
-  if(hi - lo <= 50){
+  if(hi - lo <= 20){
     insertionSort(data,lo,hi);
     return;
   }
