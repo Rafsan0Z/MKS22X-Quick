@@ -54,9 +54,9 @@ public class Quick{
       int place = i;
       while(place-1 >= 0 && ary[place - 1] > current) {
         ary[place] = ary[place - 1];
-        ary[place - 1] = current;
         place--;
       }
+      ary[place] = current;
     }
   }
 
@@ -102,7 +102,7 @@ public class Quick{
     int pivotInt = data[lo];
     int index = lo;
     int stop = greater+1;
-    while(index != stop){
+    while(index <= greater){
       if(data[index] > pivotInt){
         exchange(index,greater,data);
         greater--;
@@ -171,7 +171,7 @@ public static void quicksort(int[] data){
 }
 
 public static void QuickSortHelper(int[] data, int lo, int hi){
-  if(hi - lo <= 250){
+  if(hi - lo <= 20){
     insertionSort(data,lo+1,hi);
     return;
   }
