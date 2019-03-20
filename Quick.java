@@ -91,6 +91,7 @@ public class Quick{
   }*/
 
   public static int[] PartitionDutch(int[] data, int lo, int hi){
+    Random rn = new Random();
     if(lo == hi){
       int[] result = new int[]{lo , lo};
       return result;
@@ -114,6 +115,16 @@ public class Quick{
         index++;
       }
       else if(data[index] == pivotInt){
+      /*  int chance = Math.abs(rn.nextInt())%2;
+        if(chance == 0){
+          exchange(index,greater,data);
+          greater--;
+        }
+        else{
+          exchange(index,less,data);
+          less++;
+          index++;
+        }*/
         index++;
     }
   }
