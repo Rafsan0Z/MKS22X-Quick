@@ -52,7 +52,7 @@ public class Quick{
     for(int i = lo; i < hi+1; i++) {
       int current = ary[i];
       int place = i;
-      while(place-1 >= 0 && ary[place - 1] > current) {
+      while(place-1 >= lo-1 && ary[place - 1] > current) {
         ary[place] = ary[place - 1];
         place--;
       }
@@ -175,6 +175,7 @@ public static void QuickSortHelper(int[] data, int lo, int hi){
     insertionSort(data,lo+1,hi);
     return;
   }
+  //if(lo >= hi){return;}
   int[] pivot = PartitionDutch(data,lo,hi);
   QuickSortHelper(data,lo,pivot[0]-1);
   QuickSortHelper(data,pivot[1]+1,hi);
