@@ -98,8 +98,8 @@ public class Quick{
     int less = lo;
     int greater = hi;
     int pivot = (lo+hi)/2;
+    int pivotInt = data[pivot];
     exchange(lo,pivot,data);
-    int pivotInt = data[lo];
     int index = lo;
     int stop = greater+1;
     while(index <= greater){
